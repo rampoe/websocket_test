@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-liudn@c6etu3-8=+)0a0av10in-(+=g9m#_w75=kh+(b&jd5d7'
+SECRET_KEY = 'django-insecure-vhnmj&-mtkom5z&v+5c!rt1hnidz6d65wd_)i360ljbfrwrw55'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -32,17 +32,16 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'daphne',
-    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    # My app
+    'test_app',
+    # 3rd party
     'channels',
-    
-    'test_app'
 ]
 
 MIDDLEWARE = [
@@ -74,14 +73,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'websocket.wsgi.application'
-
-# Websocket configuration
 ASGI_APPLICATION = 'websocket.asgi.application'
-CHANNELS_LAYERS = {
-  'default': {
-    'BACKEND': 'channels.layers.InMemoryChannelLayer'
-  }
-}
 
 
 # Database

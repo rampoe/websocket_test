@@ -1,15 +1,17 @@
 import json
 
 from channels.generic.websocket import WebsocketConsumer
-from asgiref.sync import async_to_sync
 
-class TestConsumers(WebsocketConsumer):
+
+class ChatConsumer(WebsocketConsumer):
     def connect(self):
         self.accept()
-        self.send(text_data=json.dumps({'status': 'connected'}))
-
+    
+    def disconnect(self, close_code):
+        pass
+    
     def receive(self, text_data):
-        print(text_data)
-
-    def disconnect(self, *args, **kwargs):
-        print("Disconnected to the server")
+        text_data_json = json.loads(text_data)
+        message = text_data_json['message']
+        # Send message to websocket
+        self.send(text_data=json.dumps({'message': message}))
