@@ -4,7 +4,7 @@
 websocket_test can be installed via Pip. To start, clone the repo to your local computer and change into the proper directory.
 
 ```
-$ git clone https://github.com/wsvincent/websocket_test.git
+$ git clone https://github.com/rowsen2904/websocket_test
 $ cd websocket_test
 ```
 
